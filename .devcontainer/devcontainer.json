@@ -1,0 +1,18 @@
+{
+    "name": "F1 Results Dashboard",
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "web",
+    "workspaceFolder": "/var/www/html",
+    "forwardPorts": [8080, 8081, 3306],
+    "portsAttributes": {
+        "8080": {
+            "label": "F1 Dashboard (web)",
+            "onAutoForward": "openPreview",
+            "visibility": "public"
+        },
+        "8081": {
+            "label": "phpMyAdmin"
+        }
+    },
+    "postCreateCommand": "echo 'F1 Environment is ready. Open the forwarded port 8080 to view it.'"
+}
